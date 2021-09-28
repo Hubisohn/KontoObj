@@ -25,4 +25,23 @@ public class Client {
         }
     }
 
+    public void closeKonto(){
+        System.out.println("Sind Sie sicher dass Sie das Konto schließen wollen? [Ja/Nein]");
+        String accept = new String();
+        Scanner scanner = new Scanner(System.in);
+        accept = scanner.nextLine();
+
+        if(accept.equalsIgnoreCase("Ja")){
+            if((this.konto.money - 30) >= 0) {
+                System.out.println("Konto wurde gschlossen!");
+                System.out.println("Ihnen wurde " + (this.konto.money - 30) + " ausgezahlt! (-30€ Bearbeitungsgebühr!)");
+                this.konto = null;
+            }else{
+                System.out.println("Sie schulden der Bank " + (this.konto.money - 30) + ". Überweißen Sie oder wir töten Sie!");
+            }   System.out.println("Deswegen kann das Konto nicht gschlossen werden!");
+        }else{
+            System.out.println("Vorgang abgebrochen!");
+        }
+    }
+
 }

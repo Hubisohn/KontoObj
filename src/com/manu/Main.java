@@ -21,5 +21,6 @@ public class Main {
         System.out.println("---------Luke---------");
         Luke.konto.getInfo();
         System.out.println("---------Luke---------");
+        Luke.closeKonto();
     }
 }
